@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, NavLink } from 'react-router-dom'; // <-- add NavLink
 import Home from './pages/Home';
 import FunProblems from './pages/FunProblems';
 import Ros2Robot from './pages/Ros2Robot';
@@ -8,7 +8,6 @@ import { useState, useEffect } from 'react';
 
 export default function App() {
   const [dark, setDark] = useState(false);
-
   const [initializedTheme, setInitializedTheme] = useState(false);
 
   const getInitialDark = () => {
@@ -16,7 +15,6 @@ export default function App() {
       const saved = localStorage.getItem('theme');
       if (saved) return saved === 'dark';
     } catch (e) {}
-    // Default to dark when no saved preference is present
     return true;
   };
 
@@ -26,7 +24,6 @@ export default function App() {
       setInitializedTheme(true);
       return;
     }
-
     document.documentElement.classList.toggle('dark', dark);
     try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) {}
   }, [dark, initializedTheme]);
@@ -37,8 +34,8 @@ export default function App() {
         <header className="navbar">
           <h1>Jacob Dell</h1>
           <nav>
-            <NavLink to="/" className={({isActive})=> isActive? 'nav-link active' : 'nav-link'}>Home</NavLink>
-            <NavLink to="/fun" className={({isActive})=> isActive? 'nav-link active' : 'nav-link'}>Fun Problems</NavLink>
+            <NavLink to="/" className={({isActive})=> isActive ? 'nav-link active' : 'nav-link'}>Home</NavLink>
+            <NavLink to="/fun" className={({isActive})=> isActive ? 'nav-link active' : 'nav-link'}>Fun Problems</NavLink>
           </nav>
 
           <div className="nav-controls">
@@ -50,24 +47,15 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/fun" element={<FunProblems />} />
           <Route path="/ros2-robot" element={<Ros2Robot />} />
-      
         </Routes>
 
         <footer className="footer">
           <p>© 2025 Jacob Dell</p>
           <div className="footer-icons">
-            <a
-              href="https://www.linkedin.com/in/jacob-dell-b55b03308"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://www.linkedin.com/in/jacob-dell-b55b03308" target="_blank" rel="noopener noreferrer">
               <FaLinkedin size={24} />
             </a>
-            <a
-              href="https://github.com/jacobdell"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a href="https://github.com/jacobdell" target="_blank" rel="noopener noreferrer">
               <FaGithub size={24} />
             </a>
           </div>
