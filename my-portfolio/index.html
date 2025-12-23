@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/jpg" href="/fball.jpg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jacob Dell</title>
+    <!-- Prevent flash: apply saved theme (or default dark) before React mounts -->
+    <script>
+      (function(){
+        try {
+          var saved = localStorage.getItem('theme');
+          if (saved === 'dark') document.documentElement.classList.add('dark');
+          else if (saved === 'light') document.documentElement.classList.remove('dark');
+          else document.documentElement.classList.add('dark'); /* default to dark */
+        } catch (e) {}
+      })();
+    </script>
+    <!-- KaTeX for rendering LaTeX math in markdown-backed pages -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
