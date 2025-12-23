@@ -30,7 +30,7 @@ export default function Home() {
 
 
         <a
-          href={resumePDF}
+          href="/resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="contact-button"
