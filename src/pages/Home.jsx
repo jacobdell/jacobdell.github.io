@@ -159,7 +159,7 @@ export default function Home() {
         <img src={weatherImg} alt="Weather Forecasting project" className="project-image" />
             <h4>Weather Forecasting with ML</h4>
             <p className="muted">
-                Statistical and ML Models for Real-Time Forecasting
+                Statistical and ML Models for Real-Time Forecasting.
             </p>
             <div className="project-links">
                 <a
@@ -177,7 +177,7 @@ export default function Home() {
         <img src={signal} alt="Signal Processing" className="project-image" />
             <h4>Signal Processing Projects</h4>
             <p className="muted">
-                Various Signal Processing Projects
+                Various Signal Processing Projects.
             </p>
             <div className="project-links">
                 <a
