@@ -6,7 +6,7 @@ import robot from '../assets/robot.png'
 import neuralnet from '../assets/neural_network.png'
 import mixLogo from '../assets/MIx.png';
 import { Link } from 'react-router-dom';
-import resumePDF from '../assets/resume.pdf';
+
 import weatherSlides from '../assets/weather_forecasting_slides.pdf';
 export default function Home() {
   return (
